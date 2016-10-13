@@ -79,7 +79,7 @@ public class Main {
                     String name = session.attribute("loginName");
                     Message msg = new Message(messages.size(), replyId, name, text);
                     messages.add(msg);
-                    response.redirect("/");
+                    response.redirect(request.headers("Referer"));
                     return null;
                 }
         );
